@@ -16,3 +16,22 @@
 @import "bootstrap";
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
+
+.heart{
+  color:red;
+}
+
+.plus{
+  animation: heart 0.8s forwards;
+}
+
+@keyframes heart {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    color:red;
+  }
+}
