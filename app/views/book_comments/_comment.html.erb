@@ -1,0 +1,10 @@
+        コメント数：<%= comments.count %>件
+        <% comments.each do |book_comment| %>
+        <p>
+        <%= attachment_image_tag(book_comment.user, :profile_image, :fill,40,40,fallback: "no-image-icon.jpg") %>
+        <%= book_comment.user.name %>
+        <%= book_comment.comment %>
+        <%= link_to "destroy" ,book_book_comment_path(book_comment.book,book_comment),method: :delete,remote: true ,class:"btn-sm btn-danger"%>
+        </p>
+        <% end %>
+     

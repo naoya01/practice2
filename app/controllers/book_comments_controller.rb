@@ -4,13 +4,16 @@ class BookCommentsController < ApplicationController
     comment = current_user.book_comments.new(comment_params)
     comment.book_id = book.id
     comment.save
-    redirect_to request.referer
+    @comments = book.book_comments
+    render :index
   end
 
   def destroy
     comment = BookComment.find_by(params[:book_id])
     comment.destroy
-    redirect_to request.referer
+    book = Book.find(params[:book_id])
+    @comments = book.book_comments
+    render :index
   end
 
   def comment_params
