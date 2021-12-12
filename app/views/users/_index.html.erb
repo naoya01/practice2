@@ -7,7 +7,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @users.each do |user| %>
+    <% users.each do |user| %>
       <tr>
         <td><%= link_to user_path(user) do %>
           <%= attachment_image_tag(user, :profile_image, :fill, 50, 50, fallback: "no-image-icon.jpg") %>
